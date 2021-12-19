@@ -1,0 +1,34 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="card">
+  <h1>Departamentos</h1>
+
+  <table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Departamento</th>
+        <th>Edificio</th>
+        <th colspan="5"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @apartments.each do |apartment| %>
+        <tr>
+          <td><%= apartment.puerta %></td>
+          <td><%= apartment.building.nombre %></td>
+          <td style="border-color: chartreuse;"><%= link_to 'Mostrar', apartment %></td>
+          <td style="border-color: green;"><%= link_to 'Editar', edit_apartment_path(apartment) %></td>
+          <td style="border-color: red;"><%= link_to 'Borrar Departamento', apartment, method: :delete, data: { confirm: '¿Está seguro de eliminar el edificio?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  </div>
+</div>
+
+<%= link_to new_apartment_path, class: 'btn btn-primary' do%>
+<i class="bi bi-plus-circle-fill"><i>
+Nuevo Departamento
+<%end%> 

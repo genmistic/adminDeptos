@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Adminisracion Deptos Luis Osorio</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>   
+  </head>
+
+  <body>
+    <%= render "/layouts/horizontal_menu" %>  
+    <div class="w3-container w3-red">
+      <%= yield %>
+    </div> 
+  </body>
+
+  <footer>
+    <a href="https://github.com/genmistic"><h5>Muchas Gracias - Luis Osorio Lomeña - IR A MI GITHUB</h5></a>
+  </footer>
+</html>

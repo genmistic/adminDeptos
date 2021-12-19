@@ -1,0 +1,25 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="card">
+    <h1>Identificación de Departamento</h1>
+    <p>
+      <strong>Departamento:</strong>
+      <%= @apartment.puerta %>
+    </p>
+
+    <p>
+      <strong>ID Edificio:</strong>
+      <%= @apartment.building_id %>
+    </p>
+
+    <p>
+      <strong>Nombre Edificio:</strong>
+      <%= @apartment.building.nombre %>
+    </p>
+  </div>
+</div>
+
+<div>
+  <%= link_to 'Editar', edit_apartment_path(@apartment), class: 'btn btn-primary' %> 
+  <%= link_to 'Regresar', apartments_path, class: 'btn btn-primary'  %>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="card">
+    <h1>Edificios</h1>
+
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Direccion</th>
+          <th>Ciudad</th>
+          <th>Region</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @buildings.each do |building| %>
+          <tr style="text-align:left">
+            <td><%= building.nombre %></td>
+            <td><%= building.direccion %></td>
+            <td><%= building.ciudad %></td>
+            <td><%= building.region %></td>
+            <td style="border-color: chartreuse;"><%= link_to 'Mostrar', building %></td>
+            <td style="border-color: rgb(4, 0, 246);"><%= link_to 'Editar', edit_building_path(building) %></td>
+            <td style="border-color: rgb(255, 0, 0);"><%= link_to 'Borrar Edificio', building, method: :delete, data: { confirm: '¿Está seguro de eliminar el edificio?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= link_to new_building_path, class: 'btn btn-primary' do%>
+<i class="bi bi-plus-circle-fill"><i>
+Crear Edificio
+<%end%> 
